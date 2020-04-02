@@ -38,10 +38,7 @@ INSTALLED_APPS = [
 
     'icon_color_tags',
     # applications
-    'about',
-    'skills',
-    'workexperience',
-    'contact',
+    'website',
 
 ]
 

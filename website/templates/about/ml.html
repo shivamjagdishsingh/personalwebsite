@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block rightside %}
+
+    <div id="colorlib-main">
+
+
+        <section class="colorlib-about" data-section="about">
+            <div class="colorlib-narrow-content">
+                <h2>Machine Learning and Artificial Intelligence</h2>
+                {% for item in machine_learning %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                                <div class="col-md-12">
+                                    <div class="about-desc">
+
+                                        <hr>
+                                        <h3 class="colourlib-heading"><a
+                                                href="{{ item.project_link }}"><strong>{{ item.name }}</strong></a></h3>
+                                        {#                                        <h4><strong>Face Detection using Python and OpenCV with webcam</strong></h4>#}
+                                        <p>{{ item.desc }}</p>
+                                        <p><strong>Used Technologies:</strong>{% for tag in item.tags.all %}
+                                            <span class="badge badge-{{ tag.color }}">{{ tag.name }}</span>{% endfor %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

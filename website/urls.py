@@ -1,10 +1,10 @@
-from about import views
+from website import views
 from django.urls import path
 from django.views.generic import TemplateView
 
-app_name = 'about'
+app_name = 'website'
 urlpatterns = [
-    path('', TemplateView.as_view(template_name="index.html")),
+    path('', views.Skills.as_view(), name='index'),
     path('webdesigning', views.WebDesigning.as_view(), name='webdesigning'),
     path('softwaredevelopment', views.SoftwareDevelopment.as_view(), name='softwaredevelopment'),
     path('machinelearning', views.MachineLearning.as_view(), name='machinelearning'),

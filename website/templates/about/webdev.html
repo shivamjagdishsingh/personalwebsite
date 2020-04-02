@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block rightside %}
+
+    <div id="colorlib-main">
+        <section class="colorlib-about" data-section="about">
+            <div class="colorlib-narrow-content">
+                <div class="row">
+                    <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                        <div class="col-md-12">
+                            <div class="about-desc">
+                                <h2>Web Development</h2>
+                                <hr>
+                                <div class="col-md-12">
+                                    <ul class="fa-ul mb-0">
+                                        {% for item in web_designing %}
+                                            <li>
+                                                {% if forloop.counter|divisibleby:2 %}
+                                                    <article class="timeline-entry animate-box"
+                                                             data-animate-effect="fadeInLeft">
+
+                                                {% else %}
+                                                    <article class="timeline-entry animate-box"
+                                                             data-animate-effect="fadeInRight">
+                                                {% endif %}
+
+
+                                                <i class="fa-li fa fa-check"></i>
+                                                <div
+                                                        onmouseover="document.querySelector('#colorlib-main > section.colorlib-skills > div > div > div:nth-child(3) > article > ul > li:nth-child(1) > div > a > div:nth-child(1)').style.backgroundColor='#A123BC'"
+                                                        onmouseout="document.querySelector('#colorlib-main > section.colorlib-skills > div > div > div:nth-child(3) > article > ul > li:nth-child(1) > div > a > div:nth-child(1)').style.backgroundColor=''">
+                                                    <a href="{{ item.project_link }}"
+                                                       style="text-decoration:none;">
+                                                        <div>
+                                                            <h4 class="mb-3">{{ item.name }}</h4>
+                                                        </div>
+                                                        <div
+                                                                class="resume-item d-flex flex-column flex-md-row justify-content-between mb-3">
+                                                            <div id="divMain">
+                                                                <div id='left-div' class="resume-content">
+                                                                    <img style='float:left; margin:0 20px;'
+                                                                         width='300px;' class='img-fluid'
+                                                                         src="{% static 'images/programmingdiaries.png' %}">
+                                                                </div>
+                                                                <div id='right-div' class='resume-content'>
+                                                                    <div class="subheading mb-0">
+                                                                        <p>{{ item.desc }}</p>
+                                                                    </div>
+                                                                    <div class="mb-0">
+                                                                        {% for tag in item.tags.all %}
+                                                                            <span class="badge badge-{{ tag.color }}">{{ tag.name }}</span>{% endfor %}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                </article>
+                                            </li>
+                                            <br>
+
+                                        {% endfor %}
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+{% endblock %}
