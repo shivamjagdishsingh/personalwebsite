@@ -5,11 +5,10 @@ from icon_color_tags.models import TaggedThing
 
 class WebDesigning(models.Model):
     name = models.CharField(max_length=50, blank=True)
-    image = models.ImageField()
     desc = models.CharField(max_length=500, blank=True)
     tags = TaggableManager(through=TaggedThing)
     fromdate = models.DateField(auto_now=False, auto_now_add=False)
-    todate = models.DateField(auto_now=False, auto_now_add=False)
+    todate = models.CharField(max_length=500, blank=True)
     project_link = models.CharField(max_length=500, blank=True)
 
     def __str__(self):
@@ -21,7 +20,7 @@ class SoftwareDevelopment(models.Model):
     desc = models.CharField(max_length=500, blank=True)
     tags = TaggableManager(through=TaggedThing)
     fromdate = models.DateField(auto_now=False, auto_now_add=False)
-    todate = models.DateField(auto_now=False, auto_now_add=False)
+    todate = models.CharField(max_length=500, blank=True)
     project_link = models.CharField(max_length=500, blank=True)
 
     def __str__(self):
@@ -33,7 +32,7 @@ class MachineLearning(models.Model):
     desc = models.CharField(max_length=500, blank=True)
     tags = TaggableManager(through=TaggedThing)
     fromdate = models.DateField(auto_now=False, auto_now_add=False)
-    todate = models.DateField(auto_now=False, auto_now_add=False)
+    todate = models.CharField(max_length=500, blank=True)
     project_link = models.CharField(max_length=500, blank=True)
 
     def __str__(self):
@@ -43,9 +42,9 @@ class MachineLearning(models.Model):
 class Experience(models.Model):
     company_name = models.CharField(max_length=50, blank=True)
     position = models.CharField(max_length=50, blank=True)
-    details = models.CharField(max_length=50, blank=True)
+    details = models.CharField(max_length=500, blank=True)
     fromdate = models.DateField(auto_now=False, auto_now_add=False)
-    todate = models.DateField(auto_now=False, auto_now_add=False)
+    todate = models.CharField(max_length=500, blank=True)
 
     def __str__(self):
         return self.company_name

@@ -19,7 +19,7 @@
                                         <hr>
                                         <h3 class="colourlib-heading"><a
                                                 href="{{ item.project_link }}"><strong>{{ item.name }}</strong></a></h3>
-                                        {#                                        <h4><strong>Face Detection using Python and OpenCV with webcam</strong></h4>#}
+                                        <h5>{{ item.fromdate }} - {{ item.todate }}</h5>
                                         <p>{{ item.desc }}</p>
                                         <p><strong>Used Technologies:</strong>{% for tag in item.tags.all %}
                                             <span class="badge badge-{{ tag.color }}">{{ tag.name }}</span>{% endfor %}

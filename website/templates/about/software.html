@@ -17,6 +17,8 @@
 
                                         <hr>
                                         <h4><a href="{{ item.project_link }}">{{ item.name }}</a></h4>
+                                        <h5>{{ item.fromdate }} - {{ item.todate }}</h5>
+
                                         <p>{{ item.desc }}<br>
                                             <strong>Technologies Used: </strong>{% for tag in item.tags.all %}
                                                 <span class="badge badge-{{ tag.color }}">{{ tag.name }}</span>{% endfor %}
