@@ -28,9 +28,11 @@
                                                 <source src='{{ item.video.url }}' type='video/mp4'>
                                                 File not found.
                                             </video>
-                                            {% if item.image %}
-                                            <img src="{{ item.image.url }}" class="img-responsive" style="width: 80%; float: left; margin-right: 10%; margin-left: 10%;"/>
                                         {% endif %}
+
+                                        {% if item.image != None %}
+                                            <img src="{{ item.image.url }}" class="img-responsive"
+                                                 style="width: 80%; float: left; margin-right: 10%; margin-left: 10%;"/>
                                         {% endif %}
                                     </div>
                                 </div>
