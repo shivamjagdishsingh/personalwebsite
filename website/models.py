@@ -6,7 +6,7 @@ import os
 
 def get_upload_path(instance, filename):
     return os.path.join(
-        "%s" % instance.name, filename)
+        "%s" % instance.name.replace(' ', ''), filename)
 
 
 class WebDesigning(models.Model):
