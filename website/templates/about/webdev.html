@@ -23,6 +23,12 @@
                                         <p><strong>Used Technologies:</strong>{% for tag in item.tags.all %}
                                             <span class="badge badge-{{ tag.color }}">{{ tag.name }}</span>{% endfor %}
                                         </p>
+                                        {% if item.file %}
+                                            <video controls>
+                                                <source src='{{ item.file.url }}' type='video/mp4'>
+                                                File not found.
+                                            </video>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>

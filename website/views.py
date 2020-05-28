@@ -18,7 +18,7 @@ class SoftwareDevelopment(generic.ListView):
 
 class MachineLearning(generic.ListView):
     context_object_name = 'machine_learning'
-    queryset = models.MachineLearning.objects.all()
+    queryset = models.MachineLearning.objects.all().order_by('pk')
     template_name = 'about/ml.html'
 
 

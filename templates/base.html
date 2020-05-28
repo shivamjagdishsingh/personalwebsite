@@ -31,7 +31,15 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Modernizr JS -->
     <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
-
+    <style>
+        video {
+            position: relative;
+            width: 80%;
+            left: 10%;
+            right: 10%;
+            height: auto;
+        }
+    </style>
 
 </head>
 
@@ -45,7 +53,7 @@
         <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
             <div class="text-center">
                 <div class="author-img" style="background-image: url({% static 'images/shivam_logo.png' %});"></div>
-                <h1 id="colorlib-logo"><a href="https://www.thehackedaccount.in">Shivam Singh</a></h1>
+                <h1 id="colorlib-logo"><a href="http://www.thehackedaccount.in">Shivam Singh</a></h1>
             </div>
 
             {% block navbar %}
