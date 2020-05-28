@@ -24,11 +24,15 @@
                                         <p><strong>Used Technologies:</strong>{% for tag in item.tags.all %}
                                             <span class="badge badge-{{ tag.color }}">{{ tag.name }}</span>{% endfor %}
                                         </p>
-                                        {% if item.file %}
+                                        {% if item.video %}
                                             <video controls>
-                                                <source src='{{ item.file.url }}' type='video/mp4'>
+                                                <source src='{{ item.video.url }}' type='video/mp4'>
                                                 File not found.
                                             </video>
+                                        {% endif %}
+                                        {% if item.image %}
+                                            <img src="{{ item.image.url }}" class="img-responsive"
+                                                 style="width: 80%; float: left; margin-right: 10%; margin-left: 10%;"/>
                                         {% endif %}
                                     </div>
                                 </div>
