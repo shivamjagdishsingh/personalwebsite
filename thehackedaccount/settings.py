@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'thehackedaccount.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'thehackedaccount',
-    }
+        'NAME': 'shivam',
+        'USER': 'shivam',
+        'PASSWORD': 'shivam',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    },
 }
 
 # Password validation
